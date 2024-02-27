@@ -2,7 +2,7 @@
 
 ## Overview
 
-ContactsApp is a simple Android application that allows users to manage their contacts. With ContactsApp, you can create, read, and delete contacts.
+MyContacts is a simple Android application that allows users to manage their contacts. With MyContacts, you can create, read, and delete contacts.
 
 ## Features
 
