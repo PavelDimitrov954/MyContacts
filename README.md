@@ -1,4 +1,4 @@
-# ContactsApp
+# MyContacts
 
 ## Overview
 
