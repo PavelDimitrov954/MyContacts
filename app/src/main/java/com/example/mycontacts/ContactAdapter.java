@@ -59,17 +59,22 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             @Override
             public void run() {
                 ContactDatabase.getDatabase(mainActivity).contactDao().delete(contact);
-                contacts.remove(position);
+
                 mainActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, contacts.size());
+                        // Make sure the position is still valid
+                        if (position < contacts.size()) {
+                            contacts.remove(position);
+                            notifyItemRemoved(position);
+                            notifyItemRangeChanged(position, contacts.size());
+                        }
                     }
                 });
             }
         }).start();
     }
+
 
     class ContactViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewName;
